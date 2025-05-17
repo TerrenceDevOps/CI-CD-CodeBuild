@@ -8,16 +8,16 @@ sudo systemctl enable docker
 sudo docker build -t techmax .
 
 # login to your docker hub account
-cat ~/my_password.txt | sudo docker login --username aosnotes77 --password-stdin
+cat ~/my_password.txt | sudo docker login --username terrence045 --password-stdin
 
 # use the docker tag command to give the image a new name
-sudo docker tag techmax aosnotes77/techmax
+sudo docker tag techmax terrence045/techmax
 
 # push the image to your docker hub repository
-sudo docker push aosnotes77/techmax
+sudo docker push terrence045/techmax
 
 # start the container to test the image 
-sudo docker run -dp 80:80 aosnotes77/techmax
+sudo docker run -dp 80:80 terrence045/techmax
 
 # referances
 # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html
