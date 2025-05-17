@@ -4,5 +4,6 @@
 set-eu
 
 # build the docker image
-sudo docker build -t techmax .
+ docker build -f $IMAGE_TAG/Dockerfile  -t $IMAGE_TAG .
+
 
