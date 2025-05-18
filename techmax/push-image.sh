@@ -1,13 +1,13 @@
 #!/bin/bash
+set -e  # Exit on any error
+set -x  # Print commands for debugging
 
-#fail on any error
-set-eu
+# Define image name (replace with your Docker Hub username/repo)
+IMAGE_NAME=terrence045/techmax-as
 
-# login to your docker hub account
-cat ~/my_password.txt | sudo docker login --username $DOCKER_HUB_USERNAME --password-stdin $DOCKER_HUB_PASSWORD
+# Authenticate with Docker Hub
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-# use the docker tag command to give the image a new name
- docker tag $IMAGE_TAG $DOCKER_HUB_USERNAME/$DOCKER_HUB_REPO_NAME
-
-# push the image to your docker hub repository
- docker push $IMAGE_TAG $DOCKER_HUB_USERNAME/$DOCKER_HUB_REPO_NAME
+# Tag and push the image
+docker tag techmax-app:latest $IMAGE_NAME:latest
+docker push $IMAGE_NAME:latest

@@ -1,9 +1,9 @@
 #!/bin/bash
+set -eu  # Exit on error and undefined variables
+set -x   # Print commands for debugging
 
-#fail on any error
-set-eu
+# Define image tag
+IMAGE_NAME=techmax-app
 
-# build the docker image
- docker build -f $IMAGE_TAG/Dockerfile  -t $IMAGE_TAG .
-
-
+# Build the Docker image using Dockerfile in techmax directory
+docker build -t $IMAGE_NAME:latest -f techmax/Dockerfile .
