@@ -7,10 +7,9 @@ phases:
 
   pre_build:
     commands:
-      - chmod +x build-image.sh push-image.sh
-      - ./build-image.sh
+      - chmod +x techmax/build-image.sh techmax/push-image.sh
+      - ./techmax/build-image.sh
 
   build:
     commands:
-      - ./push-image.sh
-      
+      - ./techmax/push-image.sh
